@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee Data</title>
+    <style>
+      body {
+        background-color: lightgreen;
+      }
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+        background-color: black;
+        color: white;
+      }
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      button {
+        margin-left: 37rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        padding: 7px;
+        color: #dddddd;
+        border: none;
+        font-size: 1.3rem;
+        font-family:sans-serif;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Employee Salary List</h1>
+    <button
+      id="toggleButton"> Check Salary</button>
+    <table>
+      <tr>
+        <th>Sr._no.</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th id="salaryHeader" style="display: none">Salary ($)</th>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>1011</td>
+        <td>Xyz</td>
+        <td>Manager</td>
+        <td id="salary1" style="display: none">80000</td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>1012</td>
+        <td>Xyz</td>
+        <td>Hr</td>
+        <td id="salary1" style="display: none">90000</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>1013</td>
+        <td>Xyz</td>
+        <td>Frontend Developer</td>
+        <td id="salary1" style="display: none">89000</td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td>1014</td>
+        <td>Xyz</td>
+        <td>Software Developer</td>
+        <td id="salary1" style="display: none">75000</td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td>1015</td>
+        <td>Xyz</td>
+        <td>Developer</td>
+        <td id="salary2" style="display: none">60000</td>
+      </tr>
+      <tr>
+        <td>06</td>
+        <td>1016</td>
+        <td>Xyz</td>
+        <td>Designer</td>
+        <td id="salary3" style="display: none">55000</td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td>1017</td>
+        <td>Xyz</td>
+        <td>Manager</td>
+        <td id="salary1" style="display: none">50000</td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td>1018</td>
+        <td>Xyz</td>
+        <td>Designer</td>
+        <td id="salary1" style="display: none">80000</td>
+      </tr>
+      <!-- Add more employees here -->
+    </table>
+    <script>
+      const toggleButton = document.getElementById("toggleButton");
+      const salaryHeader = document.getElementById("salaryHeader");
+      const salaries = document.querySelectorAll('[id^="salary"]');
+
+      toggleButton.addEventListener("click", () => {
+        if (salaryHeader.style.display === "none") {
+          salaryHeader.style.display = "table-cell";
+          salaries.forEach((salary) => (salary.style.display = "table-cell"));
+        } else {
+          salaryHeader.style.display = "none";
+          salaries.forEach((salary) => (salary.style.display = "none"));
+        }
+      });
+    </script>
+  </body>
+</html>
